@@ -1,6 +1,9 @@
 # Covid-lookup
 A free to use Python-based Covid-19 stats web interface.
 
+## Demo
+https://www.covid-lookup.com
+
 ## Prerequisites
 * [Python3](https://www.python.org/downloads/ "Download Python") (Python 3.7 - 3.9 has been tested)
 
