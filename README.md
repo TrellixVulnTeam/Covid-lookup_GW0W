@@ -1,4 +1,4 @@
-# Covid-lookup
+# Covid-lookup v0.2
 A free to use Python-based Covid-19 stats web interface.
 
 ## Demo
