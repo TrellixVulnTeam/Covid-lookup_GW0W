@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Covid-Lookup - {{country}}</title>
+    <link rel="stylesheet" href="../static/index/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="../static/index/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/index/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/index/assets/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="../static/index/assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="../static/index/assets/css/untitled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean" style="background: rgba(255,255,255,0);">
+        <div class="container-fluid"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-virus" style="color: rgb(0,123,255);font-size: 37px;">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="12" r="5"></circle>
+                <path d="M12 7v-4m-1 0h2"></path>
+                <path d="M12 7v-4m-1 0h2" transform="rotate(45 12 12)"></path>
+                <path d="M12 7v-4m-1 0h2" transform="rotate(90 12 12)"></path>
+                <path d="M12 7v-4m-1 0h2" transform="rotate(135 12 12)"></path>
+                <path d="M12 7v-4m-1 0h2" transform="rotate(180 12 12)"></path>
+                <path d="M12 7v-4m-1 0h2" transform="rotate(225 12 12)"></path>
+                <path d="M12 7v-4m-1 0h2" transform="rotate(270 12 12)"></path>
+                <path d="M12 7v-4m-1 0h2" transform="rotate(315 12 12)"></path>
+            </svg><a class="navbar-brand" href="/" style="margin-left: 10px;">Covid-Lookup</a><em>(v0.2)</em><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="color: rgba(0,0,0,0);"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <div>
+        <section>
+            <div class="container" style="margin-top: 20px;"><a href="/"><i class="fa fa-arrow-left" data-aos="fade-left" data-aos-delay="650" style="font-size: 38px;"></i></a></div>
+        </section>
+    </div>
+    <section class="clean-block about-us">
+        <div class="container" style="margin-top: 43px;">
+            <div class="block-heading">
+                <h1 style="color: var(--white);background: rgba(0,123,255,0.86);border-width: 10px;border-style: none;border-width: 0px;font-size: 35px;border-radius: 10px;opacity: 1;filter: blur(0px) invert(0%) saturate(100%) sepia(0%);">&nbsp;Results for:&nbsp;{{country}}</h1>
+            </div>
+            <div class="row" style="margin-top: 26px;">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card clean-card text-center">
+                        <div class="card-body info" data-aos="fade-down-right" data-aos-duration="150">
+                            <h4 class="text-left card-title">Confirmed infections</h4>
+                            <p class="text-left card-text"><strong>Today</strong>: {{infectedNew}}</p>
+                            <p class="text-left card-text"><strong>Total:</strong> {{infectedTotal}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card clean-card text-center">
+                        <div class="card-body info" data-aos="fade-down" data-aos-duration="150" data-aos-delay="150">
+                            <h4 class="text-left card-title">Recovered</h4>
+                            <p class="text-left card-text"><strong>Today</strong>: {{recoveredNew}}</p>
+                            <p class="text-left card-text"><strong>Total:</strong> {{recoveredTotal}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card clean-card text-center">
+                        <div class="card-body info" data-aos="fade-down-left" data-aos-duration="150" data-aos-delay="300">
+                            <h4 class="text-left card-title">Deceased</h4>
+                            <p class="text-left card-text"><strong>Today</strong>: {{deceasedNew}}</p>
+                            <p class="text-left card-text"><strong>Total:</strong> {{deceasedTotal}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-around" style="margin-top: 27px;margin-bottom: 0px;">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card clean-card text-center">
+                        <div class="card-body info" data-aos="fade-down-right" data-aos-duration="150">
+                            <h4 class="text-left card-title">Percentage globally</h4>
+                            <p class="text-left card-text"><strong>Today</strong>: {{countryTodayPercentage}}</p>
+                            <p class="text-left card-text"><strong>Total:</strong> {{countryTotalPercentage}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card clean-card text-center">
+                        <div class="card-body info" data-aos="fade-down" data-aos-duration="150" data-aos-delay="150">
+                            <h4 class="text-left card-title">Country status</h4>
+                            <p class="text-left card-text"><strong>Today</strong>: {{countryStatusToday}}</p>
+                            <p class="text-left card-text"><strong>Total:</strong> {{countryStatusTotal}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="clean-block about-us">
+            <div class="container">
+                <div class="block-heading"></div>
+            </div>
+            <div class="container" style="margin-top: 77px;">
+                <div class="block-heading">
+                    <h1 class="text-center" style="color: var(--blue);"><strong>Statistics</strong><br></h1>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="../static/index/assets/js/jquery.min.js"></script>
+    <script src="../static/index/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/index/assets/js/chart.min.js"></script>
+    <script src="../static/index/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <section class="clean-block about-us">
+        <div class="container" style="margin-top: 25px;">
+           <canvas id="doughnut-chart" style="display: block; width: 450px; height: 225px;" width="450" height="225"></canvas>
+            <script>
+                    var infectedTotal = '{{infectedTotal}}'
+                    infectedTotal=infectedTotal.replace(/\,/g,'')
+                    infectedTotal=Number(infectedTotal)
+                    var totalInfected = '{{totalInfected}}'
+                    totalInfected=totalInfected.replace(/\,/g,'')
+                    totalInfected=Number(totalInfected)
+                    new Chart(document.getElementById("doughnut-chart"), {
+                    type: 'doughnut',
+                    data: {
+                      labels: ["Total", "{{country}}"],
+                      datasets: [
+                        {
+                          label: "Comparison",
+                          backgroundColor: ["#4e73df", "#e0480b"],
+                          data: [totalInfected, infectedTotal]
+                        }
+                      ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                      title: {
+                        display: true,
+                        text: '{{country}} compared to total confirmed infections globally'
+                      }
+                    }
+                });
+            </script>
+        </div>
+    </section>
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
+                    <p class="text-muted small mb-4 mb-lg-0">© Incendium 2021. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="https://github.com/1ncendium"><i class="fa fa-github fa-2x fa-fw" style="color: rgb(10,15,20);"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
